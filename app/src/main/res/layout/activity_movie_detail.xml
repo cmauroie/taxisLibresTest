@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="movieDetailViewModel"
+            type="ViewModels.MovieDetailsViewModel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.35"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imagen_portada"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:scaleType="centerInside" />
+
+            <ImageView
+                android:id="@+id/imagen_portada_trasera"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:scaleType="centerInside" />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.65">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/contenedor_detalles_dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorTaxisLibres"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.3"
+                            android:fontFamily="cursive"
+                            android:padding="@dimen/padding_text2"
+                            android:text="@string/tituloOriginal"
+                            android:textColor="@color/White"
+                            android:textSize="@dimen/texto_ubicaciones" />
+
+                        <TextView
+                            android:id="@+id/titulo_o_pelicula_dp"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.7"
+                            android:background="@color/White"
+                            android:fontFamily="cursive"
+                            android:gravity="center_vertical"
+                            android:paddingStart="@dimen/padding_text2"
+                            android:paddingLeft="@dimen/padding_text2"
+                            android:text="@{movieDetailViewModel.titulo_original}"
+                            android:textSize="@dimen/texto_ubicaciones" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorTaxisLibres"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.3"
+                            android:fontFamily="cursive"
+                            android:padding="@dimen/padding_text2"
+                            android:text="@string/tituloEspaniol"
+                            android:textColor="@color/White"
+                            android:textSize="@dimen/texto_ubicaciones" />
+
+
+                        <TextView
+                            android:id="@+id/titulo_t_pelicula_dp"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.7"
+                            android:background="@color/White"
+                            android:fontFamily="cursive"
+                            android:paddingStart="@dimen/padding_text2"
+                            android:paddingLeft="@dimen/padding_text2"
+                            android:text="@{movieDetailViewModel.titulo_traducido}"
+                            android:textSize="@dimen/texto_ubicaciones" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorTaxisLibres"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.3"
+                            android:fontFamily="cursive"
+                            android:padding="@dimen/padding_text2"
+                            android:text="@string/tagPelicula"
+                            android:textColor="@color/White"
+                            android:textSize="@dimen/texto_ubicaciones" />
+
+                        <TextView
+                            android:id="@+id/tag_pelicula_dp"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.7"
+                            android:background="@color/White"
+                            android:fontFamily="cursive"
+                            android:paddingStart="@dimen/padding_text2"
+                            android:paddingLeft="@dimen/padding_text2"
+                            android:text="@{movieDetailViewModel.tag_pelicula}"
+                            android:textSize="@dimen/texto_ubicaciones" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorTaxisLibres"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.3"
+                            android:background="@color/colorTaxisLibres"
+                            android:fontFamily="cursive"
+                            android:padding="@dimen/padding_text2"
+                            android:text="@string/ganancia"
+                            android:textColor="@color/White"
+                            android:textSize="@dimen/texto_ubicaciones" />
+
+                        <TextView
+                            android:id="@+id/ganancia_pelicula_dp"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.7"
+                            android:background="@color/White"
+                            android:paddingStart="@dimen/padding_text2"
+                            android:paddingLeft="@dimen/padding_text2"
+                            android:text="@{movieDetailViewModel.ganancia_pelicula}"
+                            android:textSize="@dimen/texto_ubicaciones" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorTaxisLibres"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.3"
+                            android:background="@color/colorTaxisLibres"
+                            android:fontFamily="cursive"
+                            android:padding="@dimen/padding_text2"
+                            android:text="@string/rating2"
+                            android:textColor="@color/White"
+                            android:textSize="@dimen/texto_ubicaciones2" />
+
+                        <TextView
+                            android:id="@+id/rating_pelicula_dp"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.7"
+                            android:background="@color/White"
+                            android:paddingStart="@dimen/padding_text2"
+                            android:paddingLeft="@dimen/padding_text2"
+                            android:text="@{movieDetailViewModel.rating_pelicula}"
+                            android:textSize="@dimen/texto_ubicaciones2" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorTaxisLibres"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.3"
+                            android:background="@color/colorTaxisLibres"
+                            android:fontFamily="cursive"
+                            android:padding="@dimen/padding_text2"
+                            android:text="@string/fechaEstreno2"
+                            android:textColor="@color/White"
+                            android:textSize="@dimen/texto_ubicaciones2" />
+
+                        <TextView
+                            android:id="@+id/fecha_estreno_pelicula_dp"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.7"
+                            android:background="@color/White"
+                            android:paddingStart="@dimen/padding_text2"
+                            android:paddingLeft="@dimen/padding_text2"
+                            android:text="@{movieDetailViewModel.fecha_estreno}"
+                            android:textSize="@dimen/texto_ubicaciones" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/contenedor_detalles_dp"
+                    android:layout_marginTop="@dimen/padding_text2"
+                    android:fontFamily="cursive"
+                    android:gravity="center"
+                    android:text="@{movieDetailViewModel.resumen}"
+                    android:textColor="@color/Black"
+                    android:textSize="@dimen/texto_ubicaciones" />
+
+            </RelativeLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="splash_text">30sp</dimen>
+    <dimen name="padding_text">10sp</dimen>
+    <dimen name="padding_text2">5sp</dimen>
+    <dimen name="toolbar_text">20sp</dimen>
+    <dimen name="tamanio_botones">55sp</dimen>
+    <dimen name="texto_ubicaciones">15sp</dimen>
+    <dimen name="texto_ubicaciones2">12sp</dimen>
+    <dimen name="button_text">17sp</dimen>
+    <dimen name="margin_top">20sp</dimen>
+    <dimen name="ancho_ubicaciones">80dp</dimen>
+    <dimen name="distancia_botones">8sp</dimen>
+</resources>

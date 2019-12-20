@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="mapDetailsViewModel"
+            type="ViewModels.MapDetailsViewModel" />
+    </data>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <TextView
+        android:id="@+id/titulo_datos_adicionales"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorTaxisLibres"
+        android:gravity="center"
+        android:padding="@dimen/padding_text"
+        android:text="@string/titulo_resumen"
+        android:fontFamily="cursive"
+        android:textColor="@color/White"
+        android:textSize="@dimen/button_text" />
+
+    <TextView
+        android:id="@+id/titulo_distancia"
+        android:layout_below="@+id/titulo_datos_adicionales"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorTaxisLibres"
+        android:gravity="center"
+        android:padding="@dimen/padding_text"
+        android:text="@string/titulo_distancia"
+        android:fontFamily="cursive"
+        android:textColor="@color/White"
+        android:textSize="@dimen/texto_ubicaciones" />
+
+    <TextView
+        android:id="@+id/texto_distancia"
+        android:layout_below="@+id/titulo_distancia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/White"
+        android:gravity="center"
+        android:padding="@dimen/padding_text"
+        android:text="@{mapDetailsViewModel.texto_distancia}"
+        android:textColor="@color/Black"
+        android:textSize="@dimen/texto_ubicaciones" />
+
+    <TextView
+        android:id="@+id/titulo_tiempo"
+        android:layout_below="@+id/texto_distancia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorTaxisLibres"
+        android:gravity="center"
+        android:padding="@dimen/padding_text"
+        android:text="@string/titulo_tiempo"
+        android:fontFamily="cursive"
+        android:textColor="@color/White"
+        android:textSize="@dimen/texto_ubicaciones" />
+
+    <TextView
+        android:id="@+id/texto_tiempo"
+        android:layout_below="@+id/titulo_tiempo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/White"
+        android:gravity="center"
+        android:padding="@dimen/padding_text"
+        android:text="@{mapDetailsViewModel.texto_tiempo}"
+        android:textColor="@color/Black"
+        android:textSize="@dimen/texto_ubicaciones" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorTaxisLibres"
+        android:gravity="center"
+        android:padding="@dimen/padding_text"
+        android:text="@string/autor"
+        android:textColor="@color/White"
+        android:fontFamily="cursive"
+        android:layout_alignParentBottom="true"
+        android:textSize="@dimen/button_text" />
+</RelativeLayout>
+</layout>

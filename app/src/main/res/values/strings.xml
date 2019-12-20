@@ -1,0 +1,43 @@
+<resources>
+    <string name="google_maps_api">AIzaSyAjpXUvyjz3pm1-uSI8l3ML-5ywGdE2ltE</string>
+    <string name="the_movie_db_api">024f78127b762dea3541c4e19597ddbe</string>
+    <string name="app_name">Taxis Libres RGM</string>
+    <string name="titulo_tool_bar">Taxis Libres</string>
+    <string name="autor">Ramiro Garrido Morales</string>
+    <string name="prueba">APP Test</string>
+    <string name="mapa">Mapa</string>
+    <string name="peliculas">Peliculas</string>
+    <string name="menu">Menu</string>
+    <string name="origen">Origen: </string>
+    <string name="destino">Destino: </string>
+    <string name="fijar_destino">Fijar destino</string>
+    <string name="ver_datos">Ver datos</string>
+    <string name="localizacion">Por favor habilite la localizacion</string>
+    <string name="internet">Por favor habilite una conexion a internet</string>
+    <string name="intentando_conectar">Intentando conectar a internet</string>
+    <string name="agregar_destino"><u>Agregar destino</u></string>
+    <string name="mover_marcador">Mantenga presionado el marcador de destino para moverlo</string>
+    <string name="titulo_marcador">Destino</string>
+    <string name="destino_fijado">Destino fijado</string>
+    <string name="limpiar">Limpiar</string>
+    <string name="calcular">Calcular ruta</string>
+    <string name="resumen_datos">Ver resumen de datos</string>
+    <string name="error_google">Error: no es posible conectar al servidor de Google</string>
+    <string name="error_the_movie_db">Sin conexion a TheMovieDB. Mostrando version antigua interna.</string>
+    <string name="error_sin_datos">Sin datos que mostrar</string>
+    <string name="error_rec_view_adap">Error en recyclerViewAdapter, onBindViewHolder</string>
+    <string name="titulo_resumen">Datos adicionales</string>
+    <string name="titulo_tiempo">Tiempo</string>
+    <string name="titulo_distancia">Distancia</string>
+    <string name="ruta_calculada">Ruta calculada con exito</string>
+    <string name="rating">Rating</string>
+    <string name="fechaEstreno">Fecha estreno</string>
+    <!--Movie details activity-->
+    <string name="tituloOriginal">Titulo original:</string>
+    <string name="tituloEspaniol">Titulo traducido:</string>
+    <string name="tagPelicula">Tag:</string>
+    <string name="ganancia">Ganancia:</string>
+    <string name="rating2">Rating:</string>
+    <string name="fechaEstreno2">Fecha estreno:</string>
+    <string name="resumenPelicula">Resumen</string>
+</resources>
