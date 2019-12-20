@@ -47,7 +47,6 @@ class MovieDetailActivity : AppCompatActivity() {
             ViewModelProviders.of(this, viewModelFactory).get(MovieDetailsViewModel::class.java)
         //Syncronizes the viewmodel data and the UI
         binding.lifecycleOwner = this
-        binding.movieDetailViewModel!!.loadFromDB()
         supportActionBar?.setCustomView(R.layout.custom_action_bar)
         supportActionBar?.setDisplayShowCustomEnabled(true)
         val layoutParams = androidx.appcompat.app.ActionBar.LayoutParams(
@@ -80,15 +79,26 @@ class MovieDetailActivity : AppCompatActivity() {
                 ).show()
                 //LOADS CACHE VERSION FROM DB
                 binding.apply {
-
-                    Timer("loadImages", false).schedule(10000) {
-                        if(movieDetailViewModel!!.poster_path.value != null){
-                            imagen_portada.setImageBitmap(BitmapFactory.decodeByteArray(movieDetailViewModel!!.poster_path.value,0,movieDetailViewModel!!.poster_path.value!!.size))
-                        }
-                        if(movieDetailViewModel!!.backdrop_path.value != null){
-                            imagenPortadaTrasera.setImageBitmap(BitmapFactory.decodeByteArray(movieDetailViewModel!!.backdrop_path.value,0,movieDetailViewModel!!.backdrop_path.value!!.size))
-                        }
+                    binding.movieDetailViewModel!!.loadFromDB()
+                    if (movieDetailViewModel!!.poster_path.value != null) {
+                        imagen_portada.setImageBitmap(
+                            BitmapFactory.decodeByteArray(
+                                movieDetailViewModel!!.poster_path.value,
+                                0,
+                                movieDetailViewModel!!.poster_path.value!!.size
+                            )
+                        )
                     }
+                    if (movieDetailViewModel!!.backdrop_path.value != null) {
+                        imagenPortadaTrasera.setImageBitmap(
+                            BitmapFactory.decodeByteArray(
+                                movieDetailViewModel!!.backdrop_path.value,
+                                0,
+                                movieDetailViewModel!!.backdrop_path.value!!.size
+                            )
+                        )
+                    }
+
                     invalidateAll()
                 }
 
@@ -105,11 +115,16 @@ class MovieDetailActivity : AppCompatActivity() {
                         binding.apply {
                             var asyncTask = TratarImagenes()
 
-                            var result = asyncTask.execute(arrayOf<String>(dto.poster_path,dto.backdrop_path)).get()
-                            if(result!![0] != null) {
+                            var result = asyncTask.execute(
+                                arrayOf<String>(
+                                    dto.poster_path,
+                                    dto.backdrop_path
+                                )
+                            ).get()
+                            if (result!![0] != null) {
                                 movieDetailViewModel!!.poster_path.value = result!![0]
                             }
-                            if(result!![1] != null) {
+                            if (result!![1] != null) {
                                 movieDetailViewModel!!.backdrop_path.value = result!![1]
                             }
 
@@ -155,25 +170,33 @@ class MovieDetailActivity : AppCompatActivity() {
 
         private val utilities = Util()
         override fun doInBackground(vararg params: Array<String>?): Array<ByteArray?> {
-            var imagenP : ByteArray? = null
-            var imagenPT : ByteArray? = null
-            var imagenPortada : Bitmap? = null
-            var imagenPortadaTrasera : Bitmap? = null
+            var imagenP: ByteArray? = null
+            var imagenPT: ByteArray? = null
+            var imagenPortada: Bitmap? = null
+            var imagenPortadaTrasera: Bitmap? = null
             //DOWNLOADS THE IMAGE INTO A BITMAP
-            if(params[0]!!.get(0) != "") {
+            if (params[0]!!.get(0) != "") {
                 imagenPortada = Picasso.get()
-                    .load(utilities.URL_IMAGES_THE_MOVIE_DB + utilities.IMAGE_SIZE + params[0]!!.get(0))
+                    .load(
+                        utilities.URL_IMAGES_THE_MOVIE_DB + utilities.IMAGE_SIZE + params[0]!!.get(
+                            0
+                        )
+                    )
                     .get()
             }
-            if(params[0]!!.get(1) != "") {
+            if (params[0]!!.get(1) != "") {
                 imagenPortadaTrasera = Picasso.get()
-                    .load(utilities.URL_IMAGES_THE_MOVIE_DB + utilities.IMAGE_SIZE + params[0]!!.get(1))
+                    .load(
+                        utilities.URL_IMAGES_THE_MOVIE_DB + utilities.IMAGE_SIZE + params[0]!!.get(
+                            1
+                        )
+                    )
                     .get()
             }
-            if(imagenPortada!=null) {
+            if (imagenPortada != null) {
                 imagenP = imagenPortada.convertToByteArray()
             }
-            if(imagenPortadaTrasera!=null) {
+            if (imagenPortadaTrasera != null) {
                 imagenPT = imagenPortadaTrasera.convertToByteArray()
             }
             return arrayOf(imagenP, imagenPT)
@@ -200,6 +223,7 @@ class MovieDetailActivity : AppCompatActivity() {
             return bytes
         }
     }
+
     override fun onBackPressed() {
         startActivity(Intent(applicationContext, MovieActivity::class.java))
     }
